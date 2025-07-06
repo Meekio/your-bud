@@ -148,6 +148,21 @@ export class SettingsComponent {
     console.log('Setting updated:', this.settingSections[sectionIndex].settings[settingIndex]);
   }
 
+  onToggleChange(event: Event, sectionIndex: number, settingIndex: number) {
+    const target = event.target as HTMLInputElement;
+    this.updateSetting(sectionIndex, settingIndex, target.checked);
+  }
+
+  onSelectChange(event: Event, sectionIndex: number, settingIndex: number) {
+    const target = event.target as HTMLSelectElement;
+    this.updateSetting(sectionIndex, settingIndex, target.value);
+  }
+
+  onInputChange(event: Event, sectionIndex: number, settingIndex: number) {
+    const target = event.target as HTMLInputElement;
+    this.updateSetting(sectionIndex, settingIndex, target.value);
+  }
+
   handleButtonClick(setting: Setting) {
     switch (setting.id) {
       case 'changePassword':

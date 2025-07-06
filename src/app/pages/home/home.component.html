@@ -1,65 +1,57 @@
 <div class="home-container">
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        Find Your Perfect
-        <span class="highlight">Tech Partner</span>
-      </h1>
-      <p class="hero-description">
-        Connect with like-minded developers, build amazing projects together, and grow your professional network. 
-        YourBud makes it easy to find the perfect match for your next collaboration.
-      </p>
-      <div class="hero-actions">
-        <a routerLink="/profile" class="btn btn-primary btn-large">
-          <span>🚀</span>
-          Get Started
-        </a>
-        <a routerLink="/matches" class="btn btn-secondary btn-large">
-          <span>💕</span>
-          View Matches
-        </a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="floating-card card-1">
-        <div class="card-avatar">👨‍💻</div>
-        <div class="card-info">
-          <h4>Alex, 24</h4>
-          <p>Full-stack Developer</p>
-        </div>
-      </div>
-      <div class="floating-card card-2">
-        <div class="card-avatar">👩‍💻</div>
-        <div class="card-info">
-          <h4>Sarah, 26</h4>
-          <p>UI/UX Designer</p>
-        </div>
-      </div>
-      <div class="floating-card card-3">
-        <div class="card-avatar">👨‍🎨</div>
-        <div class="card-info">
-          <h4>Mike, 28</h4>
-          <p>DevOps Engineer</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="home-hero card text-center mb-4">
+    <h1 class="home-title">Find Your Perfect Tech Partner</h1>
+    <p class="home-subtitle mb-4">Connect, collaborate, and build amazing projects with like-minded developers.</p>
+    <a routerLink="/profile" class="btn btn-primary">Get Started</a>
+  </div>
 
   <!-- Features Section -->
-  <section class="features">
-    <div class="section-header">
-      <h2>Why Choose YourBud?</h2>
-      <p>Everything you need to find your perfect tech partner</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card card" *ngFor="let feature of features">
-        <div class="feature-icon">{{ feature.icon }}</div>
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
+  <div class="features-section mb-4">
+    <h2 class="text-center mb-4">Why Choose YourBud?</h2>
+    <div class="features-list">
+      <div class="feature-card card">
+        <h3>Smart Matching</h3>
+        <p>Get matched with people who share your skills and interests.</p>
+      </div>
+      <div class="feature-card card">
+        <h3>Project Collaboration</h3>
+        <p>Find partners for hackathons, startups, or open source projects.</p>
+      </div>
+      <div class="feature-card card">
+        <h3>Grow Your Network</h3>
+        <p>Expand your professional circle and learn from others.</p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- How It Works Section -->
+  <div class="how-it-works-section card">
+    <h2 class="text-center mb-4">How It Works</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-number">1</div>
+        <div>
+          <h4>Create Your Profile</h4>
+          <p>Tell us about your skills, interests, and what you're looking for.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-number">2</div>
+        <div>
+          <h4>Get Matched</h4>
+          <p>We'll suggest the best partners for you to connect with.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-number">3</div>
+        <div>
+          <h4>Start Collaborating</h4>
+          <p>Chat, share ideas, and build something great together!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Stats Section -->
   <section class="stats">

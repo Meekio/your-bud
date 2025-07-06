@@ -22,7 +22,7 @@
       <div class="settings-sections">
         <div 
           class="setting-section card" 
-          *ngFor="let section of settingSections"
+          *ngFor="let section of settingSections; let sectionIndex = index"
         >
           <div class="section-header">
             <div class="section-title">
@@ -50,7 +50,7 @@
                     type="checkbox" 
                     [id]="setting.id"
                     [checked]="setting.value"
-                    (change)="updateSetting(settingSections.indexOf(section), settingIndex, $event.target.checked)"
+                    (change)="onToggleChange($event, sectionIndex, settingIndex)"
                   >
                   <label [for]="setting.id" class="toggle-label"></label>
                 </div>
@@ -59,7 +59,7 @@
                 <select 
                   *ngIf="setting.type === 'select'"
                   [value]="setting.value"
-                  (change)="updateSetting(settingSections.indexOf(section), settingIndex, $event.target.value)"
+                  (change)="onSelectChange($event, sectionIndex, settingIndex)"
                   class="setting-select"
                 >
                   <option *ngFor="let option of setting.options" [value]="option">
@@ -72,7 +72,7 @@
                   *ngIf="setting.type === 'input'"
                   type="text"
                   [value]="setting.value"
-                  (input)="updateSetting(settingSections.indexOf(section), settingIndex, $event.target.value)"
+                  (input)="onInputChange($event, sectionIndex, settingIndex)"
                   class="setting-input"
                   [placeholder]="setting.label"
                 >
