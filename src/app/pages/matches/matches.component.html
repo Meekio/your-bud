@@ -1,0 +1,115 @@
+<div class="matches-container">
+  <div class="matches-header">
+    <h1>Your Matches</h1>
+    <p>{{ matches.length }} successful connections</p>
+  </div>
+
+  <div class="matches-content">
+    <!-- Matches List -->
+    <div class="matches-list">
+      <div 
+        class="match-item card" 
+        *ngFor="let match of matches"
+        [class.active]="selectedMatch?.id === match.id"
+        (click)="selectMatch(match)"
+      >
+        <div class="match-avatar">
+          <div class="avatar-circle">
+            {{ match.avatar }}
+          </div>
+          <div class="online-indicator" [class.online]="match.isOnline"></div>
+        </div>
+        
+        <div class="match-info">
+          <div class="match-header">
+            <h3 class="match-name">{{ match.name }}</h3>
+            <span class="match-time">{{ getMatchTime(match.matchDate) }}</span>
+          </div>
+          
+          <p class="match-bio">{{ match.bio }}</p>
+          
+          <div class="match-skills">
+            <span class="skill-tag" *ngFor="let skill of match.skills">{{ skill }}</span>
+          </div>
+          
+          <div class="match-message">
+            <p class="last-message">{{ match.lastMessage }}</p>
+            <div class="message-meta">
+              <span class="unread-badge" *ngIf="match.unreadCount > 0">
+                {{ match.unreadCount }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area" *ngIf="selectedMatch">
+      <div class="chat-header">
+        <div class="chat-user">
+          <div class="chat-avatar">
+            {{ selectedMatch.avatar }}
+          </div>
+          <div class="chat-user-info">
+            <h3>{{ selectedMatch.name }}</h3>
+            <span class="chat-status" [class.online]="selectedMatch.isOnline">
+              {{ selectedMatch.isOnline ? 'Online' : 'Offline' }}
+            </span>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button class="btn btn-secondary">📞</button>
+          <button class="btn btn-secondary">📹</button>
+        </div>
+      </div>
+
+      <div class="chat-messages">
+        <div class="message-date">
+          {{ getMatchTime(selectedMatch.matchDate) }}
+        </div>
+        
+        <div class="message received">
+          <div class="message-content">
+            <p>Hey! I loved your project idea. When can we start?</p>
+            <span class="message-time">10:30 AM</span>
+          </div>
+        </div>
+        
+        <div class="message sent">
+          <div class="message-content">
+            <p>Thanks! I'm excited to collaborate. How about this weekend?</p>
+            <span class="message-time">10:32 AM</span>
+          </div>
+        </div>
+        
+        <div class="message received">
+          <div class="message-content">
+            <p>Perfect! Let's schedule a call to discuss the details.</p>
+            <span class="message-time">10:35 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input 
+          type="text" 
+          placeholder="Type your message..." 
+          class="message-input"
+        >
+        <button class="send-btn">
+          <span>💚</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- No Match Selected -->
+    <div class="no-match-selected" *ngIf="!selectedMatch">
+      <div class="no-match-content">
+        <div class="no-match-icon">💕</div>
+        <h2>Select a Match</h2>
+        <p>Choose a match from the list to start chatting and collaborating on projects together.</p>
+      </div>
+    </div>
+  </div>
+</div> 

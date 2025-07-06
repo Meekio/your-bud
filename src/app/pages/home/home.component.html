@@ -1,0 +1,85 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Find Your Perfect
+        <span class="highlight">Tech Partner</span>
+      </h1>
+      <p class="hero-description">
+        Connect with like-minded developers, build amazing projects together, and grow your professional network. 
+        YourBud makes it easy to find the perfect match for your next collaboration.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/profile" class="btn btn-primary btn-large">
+          <span>🚀</span>
+          Get Started
+        </a>
+        <a routerLink="/matches" class="btn btn-secondary btn-large">
+          <span>💕</span>
+          View Matches
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card card-1">
+        <div class="card-avatar">👨‍💻</div>
+        <div class="card-info">
+          <h4>Alex, 24</h4>
+          <p>Full-stack Developer</p>
+        </div>
+      </div>
+      <div class="floating-card card-2">
+        <div class="card-avatar">👩‍💻</div>
+        <div class="card-info">
+          <h4>Sarah, 26</h4>
+          <p>UI/UX Designer</p>
+        </div>
+      </div>
+      <div class="floating-card card-3">
+        <div class="card-avatar">👨‍🎨</div>
+        <div class="card-info">
+          <h4>Mike, 28</h4>
+          <p>DevOps Engineer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-header">
+      <h2>Why Choose YourBud?</h2>
+      <p>Everything you need to find your perfect tech partner</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card card" *ngFor="let feature of features">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item" *ngFor="let stat of stats">
+        <div class="stat-number">{{ stat.number }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Ready to Find Your Perfect Match?</h2>
+      <p>Join thousands of developers who have already found their ideal collaboration partners.</p>
+      <a routerLink="/profile" class="btn btn-primary btn-large">
+        <span>💚</span>
+        Start Matching Now
+      </a>
+    </div>
+  </section>
+</div> 

@@ -7,7 +7,42 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<h1>hello, world</h1>
-<app-profile>
-  <h2>hellooo profile</h2>
-</app-profile>
+<div class="app-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">💚</span>
+        <h1>YourBud</h1>
+      </div>
+      <nav class="nav-menu">
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </a>
+        <a routerLink="/profile" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">👤</span>
+          <span class="nav-text">Profile</span>
+        </a>
+        <a routerLink="/matches" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">💕</span>
+          <span class="nav-text">Matches</span>
+        </a>
+        <a routerLink="/settings" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">Settings</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 YourBud. Made with 💚 for better connections.</p>
+  </footer>
+</div>
