@@ -1,1 +1,20 @@
-<p>profile works!</p>
+<div class="profile-container"
+     (touchstart)="onTouchStart($event)"
+     (touchend)="onTouchEnd($event)">
+  <div class="user-card">
+    <img [src]="currentUser.image" alt="{{ currentUser.name }}" class="user-image" />
+    <h2 class="user-name">{{ currentUser.name }}, {{ currentUser.age }}</h2>
+    <p class="user-bio">{{ currentUser.bio }}</p>
+    <div class="user-skills">
+      <span *ngFor="let skill of currentUser.skills" class="skill-chip">{{ skill }}</span>
+    </div>
+  </div>
+  <div class="nav-buttons">
+    <button (click)="prevUser()" [disabled]="currentIndex === 0" class="nav-btn left">⬅️ Previous</button>
+    <button (click)="nextUser()" [disabled]="currentIndex === users.length - 1" class="nav-btn right">Next ➡️</button>
+  </div>
+  
+  <div class="card-indicator">
+    <span *ngFor="let user of users; let i = index" [class.active]="i === currentIndex"></span>
+  </div>
+</div>
